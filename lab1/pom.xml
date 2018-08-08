@@ -32,27 +32,21 @@
     <java.version>1.8</java.version>
     <failOnMissingWebXml>false</failOnMissingWebXml>
     <version.h2>1.4.187</version.h2>
-
-    <!-- Add additional properties here -->
-
-    <version.wildfly.swarm>2017.8.1</version.wildfly.swarm>
+    <version.thorntail>2.0.0.Final</version.thorntail>
 
   </properties>
-
-  <!-- Add dependency management here -->
 
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.wildfly.swarm</groupId>
-        <artifactId>bom-all</artifactId>
-        <version>${version.wildfly.swarm}</version>
-        <type>pom</type>
+        <groupId>io.thorntail</groupId>
+        <artifactId>bom</artifactId>
+        <version>${version.thorntail}</version>
         <scope>import</scope>
+        <type>pom</type>
       </dependency>
     </dependencies>
   </dependencyManagement>
-
 
   <build>
     <plugins>
@@ -65,11 +59,10 @@
         </configuration>
       </plugin>
 
-      <!-- Add additional <plugin>..</plugin> here -->
       <plugin>
-        <groupId>org.wildfly.swarm</groupId>
-        <artifactId>wildfly-swarm-plugin</artifactId>
-        <version>${version.wildfly.swarm}</version>
+        <groupId>io.thorntail</groupId>
+        <artifactId>thorntail-maven-plugin</artifactId>
+        <version>${version.thorntail}</version>
         <executions>
           <execution>
             <goals>
@@ -79,34 +72,33 @@
         </executions>
       </plugin>
 
-
     </plugins>
   </build>
 
   <dependencies>
 
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
+      <groupId>io.thorntail</groupId>
       <artifactId>jaxrs</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
+      <groupId>io.thorntail</groupId>
       <artifactId>cdi</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
+      <groupId>io.thorntail</groupId>
       <artifactId>ejb</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
+      <groupId>io.thorntail</groupId>
       <artifactId>jpa</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.wildfly.swarm</groupId>
+      <groupId>io.thorntail</groupId>
       <artifactId>datasources</artifactId>
     </dependency>
 
